@@ -8,7 +8,7 @@ play_button_posx = 350
 play_button_posy = 350
 setting_button_posx = 350
 setting_button_posy = 380
-mouse_pos = pygame.mouse.get_pos()
+
 
 class MainMenu:
     def __init__(self, screen):
