@@ -1,9 +1,10 @@
-[gd_scene load_steps=51 format=3 uid="uid://b0t441aowfhd0"]
+[gd_scene load_steps=52 format=3 uid="uid://b0t441aowfhd0"]
 
 [ext_resource type="Texture2D" uid="uid://ddldb2fkj3elx" path="res://AnimationSheet_Character.png" id="1_6wapd"]
+[ext_resource type="Script" path="res://movement.gd" id="1_q1tlb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd67e"]
-size = Vector2(16, 28)
+size = Vector2(18, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g70en"]
 atlas = ExtResource("1_6wapd")
@@ -385,9 +386,10 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_q1tlb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(72, 49)
+position = Vector2(73, 49)
 shape = SubResource("RectangleShape2D_hd67e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/CollisionShape2D"]
