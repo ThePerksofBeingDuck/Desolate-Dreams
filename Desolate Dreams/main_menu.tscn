@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfftjewyf37o3"]
+[gd_scene load_steps=6 format=3 uid="uid://cfftjewyf37o3"]
 
 [ext_resource type="Texture2D" uid="uid://8vukoy12ri1l" path="res://assets/UI/playbuttonnormal.png" id="1_2acw4"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ck7ej"]
 [ext_resource type="Texture2D" uid="uid://d04hguq3oww2f" path="res://assets/UI/playbuttonpressed.png" id="2_glupx"]
 [ext_resource type="Texture2D" uid="uid://l6auox8dy2ie" path="res://assets/UI/settingbuttonnormal.png" id="3_n7to3"]
 [ext_resource type="Texture2D" uid="uid://dvkxpklm5gac3" path="res://assets/UI/settingbuttonpressed.png" id="4_6walx"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ck7ej")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -15,7 +17,7 @@ offset_top = 1.0
 offset_right = 41.0
 offset_bottom = 41.0
 
-[node name="TextureButton" type="TextureButton" parent="Control"]
+[node name="PlayButton" type="TextureButton" parent="Control"]
 texture_filter = 1
 offset_left = -44.0
 offset_top = 33.0
@@ -25,7 +27,7 @@ action_mode = 0
 texture_normal = ExtResource("1_2acw4")
 texture_pressed = ExtResource("2_glupx")
 
-[node name="TextureButton2" type="TextureButton" parent="Control"]
+[node name="SettingsButton" type="TextureButton" parent="Control"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -44.0
@@ -34,6 +36,18 @@ offset_right = 46.0
 offset_bottom = 105.0
 texture_normal = ExtResource("3_n7to3")
 texture_pressed = ExtResource("4_6walx")
+
+[node name="LinkButton" type="LinkButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -289.0
+offset_top = 147.0
+offset_right = -190.0
+offset_bottom = 170.0
+scale = Vector2(0.72772, 0.596537)
+text = "Version 0.1.2"
+underline = 1
+uri = "https://theperksofbeingduck.itch.io/desolate-dreams"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
