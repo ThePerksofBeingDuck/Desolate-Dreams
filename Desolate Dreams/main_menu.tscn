@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfftjewyf37o3"]
+
+[ext_resource type="Texture2D" uid="uid://8vukoy12ri1l" path="res://assets/UI/playbuttonnormal.png" id="1_2acw4"]
+[ext_resource type="Texture2D" uid="uid://d04hguq3oww2f" path="res://assets/UI/playbuttonpressed.png" id="2_glupx"]
+[ext_resource type="Texture2D" uid="uid://l6auox8dy2ie" path="res://assets/UI/settingbuttonnormal.png" id="3_n7to3"]
+[ext_resource type="Texture2D" uid="uid://dvkxpklm5gac3" path="res://assets/UI/settingbuttonpressed.png" id="4_6walx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 41.0
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+texture_filter = 1
+offset_left = -44.0
+offset_top = 33.0
+offset_right = 46.0
+offset_bottom = 60.0
+action_mode = 0
+texture_normal = ExtResource("1_2acw4")
+texture_pressed = ExtResource("2_glupx")
+
+[node name="TextureButton2" type="TextureButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -44.0
+offset_top = 65.0
+offset_right = 46.0
+offset_bottom = 105.0
+texture_normal = ExtResource("3_n7to3")
+texture_pressed = ExtResource("4_6walx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
