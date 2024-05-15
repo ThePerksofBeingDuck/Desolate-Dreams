@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfftjewyf37o3"]
+[gd_scene load_steps=5 format=3 uid="uid://cfftjewyf37o3"]
 
-[ext_resource type="Texture2D" uid="uid://8vukoy12ri1l" path="res://assets/UI/playbuttonnormal.png" id="1_2acw4"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ck7ej"]
-[ext_resource type="Texture2D" uid="uid://d04hguq3oww2f" path="res://assets/UI/playbuttonpressed.png" id="2_glupx"]
-[ext_resource type="Texture2D" uid="uid://l6auox8dy2ie" path="res://assets/UI/settingbuttonnormal.png" id="3_n7to3"]
-[ext_resource type="Texture2D" uid="uid://dvkxpklm5gac3" path="res://assets/UI/settingbuttonpressed.png" id="4_6walx"]
+[ext_resource type="Texture2D" uid="uid://c24osthvuidim" path="res://assets/UI/buttons/button_normal.png" id="2_w6acq"]
+[ext_resource type="Texture2D" uid="uid://crrouj46qks7c" path="res://assets/UI/buttons/button_pressed.png" id="3_d6dbm"]
+[ext_resource type="Texture2D" uid="uid://cctwr7v262av0" path="res://assets/UI/title.png" id="4_74112"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ck7ej")
@@ -12,42 +11,46 @@ script = ExtResource("1_ck7ej")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 41.0
-offset_bottom = 41.0
-
-[node name="PlayButton" type="TextureButton" parent="Control"]
-texture_filter = 1
-offset_left = -44.0
-offset_top = 33.0
-offset_right = 46.0
-offset_bottom = 60.0
-action_mode = 0
-texture_normal = ExtResource("1_2acw4")
-texture_pressed = ExtResource("2_glupx")
-
-[node name="SettingsButton" type="TextureButton" parent="Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = -44.0
-offset_top = 65.0
-offset_right = 46.0
-offset_bottom = 105.0
-texture_normal = ExtResource("3_n7to3")
-texture_pressed = ExtResource("4_6walx")
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 43.0
+offset_bottom = 46.0
 
 [node name="LinkButton" type="LinkButton" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -289.0
-offset_top = 147.0
-offset_right = -190.0
-offset_bottom = 170.0
+offset_left = -291.0
+offset_top = 142.0
+offset_right = -192.0
+offset_bottom = 165.0
 scale = Vector2(0.72772, 0.596537)
-text = "Version 0.1.2"
+text = "Version 0.1.3"
 underline = 1
 uri = "https://theperksofbeingduck.itch.io/desolate-dreams"
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 9.0
+offset_right = 45.0
+offset_bottom = 36.0
+texture_normal = ExtResource("2_w6acq")
+texture_pressed = ExtResource("3_d6dbm")
+
+[node name="TextureButton2" type="TextureButton" parent="Control"]
+offset_left = -44.0
+offset_top = 40.0
+offset_right = 46.0
+offset_bottom = 67.0
+texture_normal = ExtResource("2_w6acq")
+texture_pressed = ExtResource("3_d6dbm")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+offset_left = -219.0
+offset_top = -136.0
+offset_right = 218.0
+offset_bottom = -71.0
+texture = ExtResource("4_74112")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2u6sspeidxjn"
-path="res://.godot/imported/TX Tileset Wall.png-6eaeb2a136242b9ee2af79695dbf6d8e.ctex"
+uid="uid://c24osthvuidim"
+path="res://.godot/imported/button_normal.png-85bb7eb02ecbf54a38ababd0bad640bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ground/TX Tileset Wall.png"
-dest_files=["res://.godot/imported/TX Tileset Wall.png-6eaeb2a136242b9ee2af79695dbf6d8e.ctex"]
+source_file="res://assets/UI/buttons/button_normal.png"
+dest_files=["res://.godot/imported/button_normal.png-85bb7eb02ecbf54a38ababd0bad640bb.ctex"]
 
 [params]
 
