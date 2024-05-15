@@ -1,12 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckeojeakayiuh"]
+[gd_scene format=3 uid="uid://bgcw58lad1g7d"]
 
-[sub_resource type="TileSet" id="TileSet_w3rvf"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
-texture_filter = 1
-tile_set = SubResource("TileSet_w3rvf")
+[node name="TileMap" type="TileMap"]
 format = 2
-layer_0/name = "Water"
-layer_0/modulate = Color(0, 0.639216, 0, 1)

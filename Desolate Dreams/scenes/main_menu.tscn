@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfftjewyf37o3"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2if8x"]
+[ext_resource type="Texture2D" uid="uid://c24osthvuidim" path="res://assets/UI/buttons/button_normal.png" id="2_ehduc"]
+[ext_resource type="Texture2D" uid="uid://crrouj46qks7c" path="res://assets/UI/buttons/button_pressed.png" id="3_blcas"]
+[ext_resource type="Texture2D" uid="uid://cctwr7v262av0" path="res://assets/UI/title.png" id="4_wreik"]
+[ext_resource type="Script" path="res://scenes/quitbutton.gd" id="5_7sx1k"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2if8x")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 43.0
+offset_bottom = 46.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -632.0
+offset_top = -391.0
+offset_right = 680.0
+offset_bottom = 353.0
+color = Color(0, 0, 0, 1)
+
+[node name="title" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -243.0
+offset_top = -154.0
+offset_right = 243.0
+offset_bottom = -80.0
+texture = ExtResource("4_wreik")
+
+[node name="version" type="LinkButton" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -291.0
+offset_top = 142.0
+offset_right = -192.0
+offset_bottom = 165.0
+scale = Vector2(0.72772, 0.596537)
+text = "Version 0.1.5"
+underline = 1
+uri = "https://theperksofbeingduck.itch.io/desolate-dreams"
+
+[node name="playbutton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -276.0
+offset_top = -23.0
+offset_right = -186.0
+offset_bottom = 4.0
+texture_normal = ExtResource("2_ehduc")
+texture_pressed = ExtResource("3_blcas")
+
+[node name="stettingsbutton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -276.0
+offset_top = 28.0
+offset_right = -186.0
+offset_bottom = 55.0
+texture_normal = ExtResource("2_ehduc")
+texture_pressed = ExtResource("3_blcas")
+
+[node name="quitbutton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.7
+anchor_top = -0.95
+anchor_right = -5.7
+anchor_bottom = -0.95
+offset_left = -48.0
+offset_top = 98.0
+offset_right = 42.0
+offset_bottom = 125.0
+texture_normal = ExtResource("2_ehduc")
+texture_pressed = ExtResource("3_blcas")
+script = ExtResource("5_7sx1k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[connection signal="pressed" from="Control/quitbutton" to="Control/quitbutton" method="_on_pressed"]

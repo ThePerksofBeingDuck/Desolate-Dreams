@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl2odm71mybqy"]
 
-[ext_resource type="Script" path="res://worldselection.gd" id="1_c8win"]
-[ext_resource type="Script" path="res://WorldList.gd" id="2_edyed"]
+[ext_resource type="Script" path="res://scripts/worldselection.gd" id="1_qorx7"]
+[ext_resource type="Script" path="res://scripts/WorldList.gd" id="2_1q1m3"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_c8win")
+script = ExtResource("1_qorx7")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -26,7 +26,7 @@ offset_left = 6.0
 offset_top = 180.0
 offset_right = 309.0
 offset_bottom = 307.0
-script = ExtResource("2_edyed")
+script = ExtResource("2_1q1m3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 325)
