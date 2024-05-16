@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfftjewyf37o3"]
+[gd_scene load_steps=6 format=3 uid="uid://ofwo1b3kdwu"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2if8x"]
 [ext_resource type="Texture2D" uid="uid://c24osthvuidim" path="res://assets/UI/buttons/button_normal.png" id="2_ehduc"]
+[ext_resource type="Script" path="res://scenes/settingsbutton.gd" id="2_rbwi3"]
 [ext_resource type="Texture2D" uid="uid://crrouj46qks7c" path="res://assets/UI/buttons/button_pressed.png" id="3_blcas"]
 [ext_resource type="Texture2D" uid="uid://cctwr7v262av0" path="res://assets/UI/title.png" id="4_wreik"]
-[ext_resource type="Script" path="res://scenes/quitbutton.gd" id="5_7sx1k"]
+[ext_resource type="Script" path="res://scripts/quitbutton.gd" id="5_7sx1k"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_2if8x")
+script = ExtResource("2_rbwi3")
 
-[node name="Control" type="Control" parent="."]
+[node name="mainMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 3.0
@@ -17,7 +17,7 @@ offset_top = 6.0
 offset_right = 43.0
 offset_bottom = 46.0
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="mainMenu"]
 layout_mode = 0
 offset_left = -632.0
 offset_top = -391.0
@@ -25,7 +25,7 @@ offset_right = 680.0
 offset_bottom = 353.0
 color = Color(0, 0, 0, 1)
 
-[node name="title" type="TextureRect" parent="Control"]
+[node name="title" type="TextureRect" parent="mainMenu"]
 layout_mode = 0
 offset_left = -243.0
 offset_top = -154.0
@@ -33,7 +33,7 @@ offset_right = 243.0
 offset_bottom = -80.0
 texture = ExtResource("4_wreik")
 
-[node name="version" type="LinkButton" parent="Control"]
+[node name="version" type="LinkButton" parent="mainMenu"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -291.0
@@ -45,7 +45,7 @@ text = "Version 0.1.5"
 underline = 1
 uri = "https://theperksofbeingduck.itch.io/desolate-dreams"
 
-[node name="playbutton" type="TextureButton" parent="Control"]
+[node name="playButton" type="TextureButton" parent="mainMenu"]
 layout_mode = 0
 offset_left = -276.0
 offset_top = -23.0
@@ -54,7 +54,7 @@ offset_bottom = 4.0
 texture_normal = ExtResource("2_ehduc")
 texture_pressed = ExtResource("3_blcas")
 
-[node name="stettingsbutton" type="TextureButton" parent="Control"]
+[node name="stettingsButton" type="TextureButton" parent="mainMenu"]
 layout_mode = 0
 offset_left = -276.0
 offset_top = 28.0
@@ -63,7 +63,7 @@ offset_bottom = 55.0
 texture_normal = ExtResource("2_ehduc")
 texture_pressed = ExtResource("3_blcas")
 
-[node name="quitbutton" type="TextureButton" parent="Control"]
+[node name="quitButton" type="TextureButton" parent="mainMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -5.7
@@ -82,4 +82,43 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[connection signal="pressed" from="Control/quitbutton" to="Control/quitbutton" method="_on_pressed"]
+[node name="settingsMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="settingsMenu"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -157.0
+offset_right = 57.0
+offset_bottom = -108.0
+text = "      Settings"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="Button" type="Button" parent="settingsMenu"]
+layout_mode = 0
+offset_left = -274.0
+offset_top = 105.0
+offset_right = -136.0
+offset_bottom = 144.0
+text = "Back"
+
+[node name="HSlider" type="HSlider" parent="settingsMenu"]
+layout_mode = 0
+offset_left = -55.0
+offset_top = -40.0
+offset_right = 55.0
+offset_bottom = -24.0
+min_value = 1.0
+value = 1.0
+
+[connection signal="pressed" from="mainMenu/quitButton" to="mainMenu/quitButton" method="_on_pressed"]

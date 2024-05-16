@@ -1,12 +1,17 @@
 [gd_scene load_steps=154 format=3 uid="uid://doy63a6p7prn4"]
 
-[ext_resource type="Script" path="res://scenes/movement.gd" id="1_nk862"]
 [ext_resource type="Texture2D" uid="uid://dn1wfbdqiee02" path="res://assets/Characters/basic_character/damage.png" id="2_30ep7"]
 [ext_resource type="Texture2D" uid="uid://d81yiow217uj" path="res://assets/Characters/basic_character/death.png" id="3_lo3lj"]
 [ext_resource type="Texture2D" uid="uid://dmh6i4cl0r1vk" path="res://assets/Characters/basic_character/idle.png" id="4_7dfqt"]
 [ext_resource type="Texture2D" uid="uid://env4hv5ybovp" path="res://assets/Characters/basic_character/jump.png" id="5_ochbh"]
 [ext_resource type="Texture2D" uid="uid://3ugi8p1t4i58" path="res://assets/Characters/basic_character/run.png" id="6_prw77"]
 [ext_resource type="Texture2D" uid="uid://ny0jfqrgbc20" path="res://assets/Characters/basic_character/walk.png" id="7_imm1h"]
+
+[sub_resource type="GDScript" id="GDScript_nprj2"]
+script/source = "extends  CharacterBody2D
+
+pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4jcf"]
 size = Vector2(15, 15)
@@ -1146,7 +1151,7 @@ animations = [{
 collision_layer = 2
 floor_stop_on_slope = false
 floor_constant_speed = true
-script = ExtResource("1_nk862")
+script = SubResource("GDScript_nprj2")
 
 [node name="main_player_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
@@ -1154,4 +1159,10 @@ shape = SubResource("RectangleShape2D_c4jcf")
 
 [node name="main_player_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0dop8")
-animation = &"idle_down"
+animation = &"death_right"
+frame = 3
+frame_progress = 0.122332
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="ready" from="AnimationPlayer" to="." method="_on_animation_player_ready"]
