@@ -87,3 +87,7 @@ jump={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
