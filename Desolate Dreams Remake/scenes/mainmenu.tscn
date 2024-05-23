@@ -184,5 +184,5 @@ mix_target = 1
 [connection signal="focus_entered" from="Menus/AllMenus/NewWorldMenu/WorldNameInput" to="." method="_on_line_edit_focus_entered"]
 [connection signal="pressed" from="Menus/AllMenus/NewWorldMenu/CreateNewWorldButton" to="." method="_on_create_new_world_button_2_pressed"]
 [connection signal="pressed" from="Menus/AllMenus/NewWorldMenu/NewWorldBackButton" to="." method="_on_new_world_back_button_pressed"]
-[connection signal="pressed" from="Menus/AllMenus/OptionsMenu/OptionsMenuBackButton" to="." method="_on_options_menu_back_button_pressed"]
 [connection signal="pressed" from="Menus/AllMenus/OptionsMenu/OptionsMenuBackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/OptionsMenu/OptionsMenuBackButton" to="." method="_on_options_menu_back_button_pressed"]
