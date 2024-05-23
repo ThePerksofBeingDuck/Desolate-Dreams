@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dihwv58ernq0u"]
-
-[sub_resource type="GDScript" id="GDScript_lvo7v"]
-script/source = "extends Node2D
-pass
-"
-
-[node name="Node2D" type="Node2D"]
-script = SubResource("GDScript_lvo7v")
