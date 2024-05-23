@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=3 uid="uid://f62parqkplwm"]
+
+[ext_resource type="Theme" uid="uid://cc0xoa47r1433" path="res://themes/defaulttheme.tres" id="1_eq5t3"]
+[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="2_j0c8k"]
+[ext_resource type="Script" path="res://scripts/LoadWorldMenu.gd" id="3_3gpad"]
+[ext_resource type="AudioStream" uid="uid://bcvjwdyd3wpxh" path="res://sfx/main_theme.mp3" id="4_uwchp"]
+
+[sub_resource type="Theme" id="Theme_5xb3r"]
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eq5t3")
+script = ExtResource("2_j0c8k")
+
+[node name="ColorBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137238, 0.165599, 0.225253, 1)
+
+[node name="Menus" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="AllMenus" type="VBoxContainer" parent="Menus"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Menus/AllMenus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_eq5t3")
+theme_override_font_sizes/font_size = 32
+text = "Desolate Dreams"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pressany" type="Label" parent="Menus/AllMenus"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press any Button to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu1" type="VBoxContainer" parent="Menus/AllMenus"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="StartGameButton" type="Button" parent="Menus/AllMenus/Menu1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitGameButton")
+focus_neighbor_bottom = NodePath("../QuitGameButton")
+focus_next = NodePath("../QuitGameButton")
+focus_previous = NodePath("../QuitGameButton")
+text = "Start Game"
+
+[node name="QuitGameButton" type="Button" parent="Menus/AllMenus/Menu1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartGameButton")
+focus_neighbor_bottom = NodePath("../StartGameButton")
+focus_next = NodePath("../StartGameButton")
+focus_previous = NodePath("../StartGameButton")
+text = "Exit"
+
+[node name="StartMenu" type="VBoxContainer" parent="Menus/AllMenus"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="StartButtonDevOnly" type="Button" parent="Menus/AllMenus/StartMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start Game (dev only("
+
+[node name="CreateNewWorldButton" type="Button" parent="Menus/AllMenus/StartMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Create New World"
+
+[node name="LoadWorldButton" type="Button" parent="Menus/AllMenus/StartMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Load World"
+
+[node name="OptionsButton" type="Button" parent="Menus/AllMenus/StartMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Options
+"
+
+[node name="StartMenuButton" type="Button" parent="Menus/AllMenus/StartMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back
+"
+
+[node name="NewWorldMenu" type="VBoxContainer" parent="Menus/AllMenus"]
+visible = false
+layout_mode = 2
+
+[node name="WorldNameInput" type="LineEdit" parent="Menus/AllMenus/NewWorldMenu"]
+layout_mode = 2
+size_flags_vertical = 8
+placeholder_text = "World NAme"
+alignment = 1
+
+[node name="CreateNewWorldButton" type="Button" parent="Menus/AllMenus/NewWorldMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Create New World"
+
+[node name="NewWorldBackButton" type="Button" parent="Menus/AllMenus/NewWorldMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "back"
+
+[node name="OptionsMenu" type="VBoxContainer" parent="Menus/AllMenus"]
+visible = false
+layout_mode = 2
+
+[node name="OptionsMenuBackButton" type="Button" parent="Menus/AllMenus/OptionsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[node name="LoadWorldMenu" type="VBoxContainer" parent="Menus/AllMenus"]
+visible = false
+layout_mode = 2
+script = ExtResource("3_3gpad")
+
+[node name="LoadWorldBackButton" type="Button" parent="Menus/AllMenus/LoadWorldMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_5xb3r")
+theme_type_variation = &"FlatButton"
+text = "Back"
+
+[node name="ItemList" type="ItemList" parent="Menus/AllMenus/LoadWorldMenu"]
+layout_mode = 2
+same_column_width = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uwchp")
+autoplay = true
+mix_target = 1
+
+[connection signal="pressed" from="Menus/AllMenus/Menu1/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/Menu1/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/StartMenu/StartButtonDevOnly" to="." method="_on_start_button_dev_only_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/StartMenu/CreateNewWorldButton" to="." method="_on_create_new_world_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/StartMenu/LoadWorldButton" to="." method="_on_load_world_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/StartMenu/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/StartMenu/StartMenuButton" to="." method="_on_start_menu_button_pressed"]
+[connection signal="focus_entered" from="Menus/AllMenus/NewWorldMenu/WorldNameInput" to="." method="_on_line_edit_focus_entered"]
+[connection signal="pressed" from="Menus/AllMenus/NewWorldMenu/CreateNewWorldButton" to="." method="_on_create_new_world_button_2_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/NewWorldMenu/NewWorldBackButton" to="." method="_on_new_world_back_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/OptionsMenu/OptionsMenuBackButton" to="." method="_on_options_menu_back_button_pressed"]
+[connection signal="pressed" from="Menus/AllMenus/OptionsMenu/OptionsMenuBackButton" to="." method="_on_button_pressed"]

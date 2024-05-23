@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dalr1f6vihtm0"]
+
+[ext_resource type="Script" path="res://themes/world_generator.gd" id="1_wejrs"]
+[ext_resource type="Texture2D" uid="uid://cd0mjegsqhq27" path="res://assets/Ground/Grass.png" id="2_jr1bh"]
+[ext_resource type="Texture2D" uid="uid://c7vivsljqd8qr" path="res://assets/Ground/Shore.png" id="3_vdwaj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73f8t"]
+resource_name = "Grass"
+texture = ExtResource("2_jr1bh")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybpav"]
+resource_name = "Shore"
+texture = ExtResource("3_vdwaj")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pp0v3"]
+sources/0 = SubResource("TileSetAtlasSource_73f8t")
+sources/1 = SubResource("TileSetAtlasSource_ybpav")
+
+[node name="World Generator" type="Node2D"]
+script = ExtResource("1_wejrs")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_pp0v3")
+format = 2

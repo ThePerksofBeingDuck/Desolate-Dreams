@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cc0xoa47r1433"]
+
+[ext_resource type="FontFile" uid="uid://cakwylpl8t8xx" path="res://fonts/Early GameBoy.ttf" id="2_yxqwa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ua5j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl4il"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0u4g"]
+bg_color = Color(0.502367, 0.607545, 0.759087, 1)
+
+[resource]
+default_font = ExtResource("2_yxqwa")
+default_font_size = 16
+Button/colors/font_color = Color(0.300847, 0.531722, 0.571075, 1)
+Button/styles/disabled = null
+Button/styles/hover = SubResource("StyleBoxFlat_0ua5j")
+Button/styles/normal = SubResource("StyleBoxFlat_wl4il")
+Button/styles/pressed = SubResource("StyleBoxFlat_b0u4g")
+Label/colors/font_color = Color(0.18814, 0.497642, 0.371279, 1)

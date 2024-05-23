@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpn3e7j0pgsci"]
+
+[ext_resource type="Theme" uid="uid://cc0xoa47r1433" path="res://themes/defaulttheme.tres" id="1_ei2e7"]
+[ext_resource type="Script" path="res://scenes/loading_screen.gd" id="2_q0o4o"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ei2e7")
+script = ExtResource("2_q0o4o")
+
+[node name="ColorBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137238, 0.165599, 0.225253, 1)
+
+[node name="Menus" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="AllMenus" type="VBoxContainer" parent="Menus"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Menus/AllMenus"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_ei2e7")
+theme_override_font_sizes/font_size = 32
+text = "Desolate Dreams"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pressany" type="Label" parent="Menus/AllMenus"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Loading...
+Please Wait"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 5.0
+autostart = true
