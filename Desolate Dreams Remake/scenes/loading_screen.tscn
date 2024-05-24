@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpn3e7j0pgsci"]
 
 [ext_resource type="Theme" uid="uid://cc0xoa47r1433" path="res://themes/defaulttheme.tres" id="1_ei2e7"]
-[ext_resource type="Script" path="res://scenes/loading_screen.gd" id="2_q0o4o"]
+[ext_resource type="Script" path="res://scripts/loading_screen.gd" id="2_q0o4o"]
 
 [node name="LoadingScreen" type="Control"]
 layout_mode = 3
@@ -54,6 +54,9 @@ text = "Loading...
 Please Wait"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Menus/AllMenus"]
+layout_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 3

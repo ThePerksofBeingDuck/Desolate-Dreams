@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cf7c5dsnwbedu" path="res://assets/Characters/basic_character/walk.png" id="4_clxyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iodyn"]
+radius = 16.1245
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1g6f"]
 atlas = ExtResource("2_w24hw")
@@ -395,8 +396,8 @@ shape = SubResource("CircleShape2D_iodyn")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(5.96046e-08, -4.76837e-07)
-scale = Vector2(2.025, 1.77343)
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(2.8125, 2.51172)
 sprite_frames = SubResource("SpriteFrames_4pyum")
 animation = &"walk_down"
 frame_progress = 0.547264

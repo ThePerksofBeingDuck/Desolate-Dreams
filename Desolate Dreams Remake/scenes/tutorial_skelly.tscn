@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=3 uid="uid://xrqwt0ytse3q"]
+
+[ext_resource type="Texture2D" uid="uid://byf71qw1d34gs" path="res://assets/Characters/Skeleton Sprite Sheet/Skeleton Idle.png" id="1_e8spj"]
+[ext_resource type="Script" path="res://scenes/tutorial_skelly.gd" id="1_iomua"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jo2g"]
+radius = 8.0
+height = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wap2x"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q5ds"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4ug5"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq8c0"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w0ee"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yujj"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff610"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12rln"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tijhx"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(192, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdtof"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(216, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la603"]
+atlas = ExtResource("1_e8spj")
+region = Rect2(240, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vwmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wap2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q5ds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4ug5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq8c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w0ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yujj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff610")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12rln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tijhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdtof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la603")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tutorial Skelly" type="CharacterBody2D"]
+script = ExtResource("1_iomua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 5)
+shape = SubResource("CapsuleShape2D_0jo2g")
+
+[node name="skelly" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0vwmi")
+frame = 10
+frame_progress = 0.833331

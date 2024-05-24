@@ -77,4 +77,4 @@ func _on_options_menu_back_button_pressed():
 func _on_start_button_dev_only_pressed():
 	'''get_tree().change_scene_to_file("res://scenes/loading_screen.tscn")
 	print("changing")'''
-	get_tree().change_scene_to_file("res://scenes/tile_map.tscn")
+	get_tree().change_scene_to_file("res://scenes/loading_screen.tscn")
