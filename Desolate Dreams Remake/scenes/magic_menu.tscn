@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ct3jbieqv213j"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 3.0
+offset_right = 84.0
+offset_bottom = 43.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 29.0
+offset_right = 14.0
+offset_bottom = 37.0
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 37.0
+offset_bottom = 37.0

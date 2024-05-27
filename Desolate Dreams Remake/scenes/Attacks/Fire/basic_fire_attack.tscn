@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbogb35p0vtf3"]
+
+[ext_resource type="Texture2D" uid="uid://frphhe40moxt" path="res://assets/Miscellaneous/All_Fire_Bullet_Pixel_16x16.png" id="1_cgv43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5420"]
+size = Vector2(32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o05b"]
+atlas = ExtResource("1_cgv43")
+region = Rect2(288, 286, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y525k"]
+atlas = ExtResource("1_cgv43")
+region = Rect2(320, 286, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wf6o"]
+atlas = ExtResource("1_cgv43")
+region = Rect2(352, 286, 32, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i73gu"]
+atlas = ExtResource("1_cgv43")
+region = Rect2(384, 286, 32, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bcwi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o05b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y525k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wf6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i73gu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Basic Fire Attack" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -0.5)
+shape = SubResource("RectangleShape2D_p5420")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -6)
+sprite_frames = SubResource("SpriteFrames_bcwi4")
+frame_progress = 0.797978
